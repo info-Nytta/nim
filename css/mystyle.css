@@ -1,0 +1,154 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	margin-top:0;
+	background-color: black;
+	color:khaki;
+	font-size: 1.2em;
+}
+
+/*navigation bar*/
+nav {
+	color: #c3920c;
+	padding: 5px 0;
+	position: sticky;
+	top: 0;
+	z-index: 20;
+	background-color: black;
+	/*border-bottom:3px #c3920c ridge;*/
+text-align: center;
+}
+
+main {
+	background-color:black;
+	color: khaki;
+}
+.content {
+	width: 95%;
+	max-width:400px;
+	margin: auto;
+}
+h2 {
+	color: #c3920c;
+}
+footer {
+	position: absolute;
+	width: 100%;
+	background-color: black;
+	bottom:0;
+	text-align: center;
+	padding: 10px 0;
+  color: #c3920c;
+	font-size: 10px;
+	font-style: italic;
+	/*border-top:3px #c3920c ridge;*/
+
+}
+/*game*/
+#new {
+	height:30px;
+	padding:3px 10px 0 10px;
+	filter: brightness(200%);
+}
+.icon {
+	height:30px;
+	padding:0 5px 4px 5px;
+	border:none !important;
+}
+div.buttons {
+	width: 100%;
+	background-color: black;
+	height: 50px;
+	color: khaki;
+	border-radius: 5px;
+	border: 3px #c3920c solid;
+	overflow: auto;
+	padding:6px 3px 3px 3px;
+}
+div.buttons button {
+	float:right;
+	color: khaki;
+}
+
+div.buttons button, div.buttons form input[type=image], #message{
+	background-color: transparent;
+	padding: 2px 4px;
+	border-radius: 5px;
+	border:none;
+}
+
+div.buttons button.btn:hover {
+	color: khaki;
+	border: 1px khaki solid !important;
+	cursor: pointer;
+}
+
+/*
+div#message {
+	color: khaki;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top: 1px khaki solid;
+	border-bottom: 1px khaki solid;
+}*/
+div.lepes {
+	background-color:black;
+	position: relative;
+	padding:5px;
+	text-align:center;
+	z-index: 21;
+}
+button#me {
+	width: 100%;
+	padding: 5px;
+	background-color: #c3920c;
+	color: black;
+	border: none;
+	border-radius: 5px;
+	border-color: khaki;
+
+}
+#gep:hover, #jatekos:hover, #me:hover, #restart:hover, #back:hover, #hint:hover {
+	cursor: pointer !important;
+}
+
+#restart, #back, #hint {
+	display: none;
+}
+
+div#stars {
+		text-align: center;
+	padding: 10px 0;
+}
+
+img.star {
+	width: 30px;
+	height: 30px;
+	padding: 3px;
+}
+
+
+div.playground {
+	margin:25px auto auto auto;
+}
+img.gyufa {
+	height: 75px;
+	width: 25px;
+	margin:5px 1px;
+}
+img.gyufa:hover {
+	filter: grayscale(50%);
+	cursor: pointer;
+}
+#lose, #win {
+	background-position: center center;
+	background-repeat: no-repeat;
+	margin: 15px auto;
+	height: 400px;
+	background-size: 60% auto;
+	display: none;
+}
+#lose {background-image: url(../nim/lose.png);}
+#win {background-image: url(../nim/win.png);}
