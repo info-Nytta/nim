@@ -22,14 +22,14 @@ function jatek(t){
 	let lepes=new Array();
 
 	do {
-	document.write(t+"<br><br>");
-	document.write(osszelem(t)+"<br><br>");
+		document.write(t+"<br><br>");
+		document.write(osszelem(t)+"<br><br>");
 
-	nim=nimszamol(t);
-	document.write("nim szám: "+nim+"<br>");
-	lepes=geplep(t);
-	document.write("gép lépése: "+lepes+"<br><hr>");
-	kupacok=tmod(t,lepes);
+		nim=nimszamol(t);
+		document.write("nim szám: "+nim+"<br>");
+		lepes=geplep(t);
+		document.write("gép lépése: "+lepes+"<br><hr>");
+		kupacok=tmod(t,lepes);
 
 	} while (osszelem(t)>0);
 }
