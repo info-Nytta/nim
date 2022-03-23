@@ -1,13 +1,14 @@
 <script src='js/functions.js'></script>
 <script src='js/move.js'></script>
 <script src='js/game.js'></script>
+<script src='js/level.js'></script>
 <script>
 
-const kdb=Math.floor( Math.random()*3+3);
-let kupacok=new Array();
-for (let i=0; i<kdb; i++) { kupacok[i]=Math.floor(Math.random()*10+1);}
+var lepesek=0;
+var lepestomb=new Array();
+lepestomb[0]=szint_general(0);
+ujjatek(lepestomb[0]);
 
-jatek(kupacok);
 
 //kupacok=[5,4,2,1,1];
 //kupacok=[5,4,2,1];
@@ -18,3 +19,4 @@ jatek(kupacok);
 //kupacok=tombmodosit(kupacok,geplep(kupacok));
 
 </script>
+valami

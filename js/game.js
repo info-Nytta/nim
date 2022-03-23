@@ -11,25 +11,46 @@ function geplep(t) {
 	return lepes;
 }
 
+function jatekoslep(t) {
+
+}
+
 function tmod(t,lepes) {
 	t[lepes[0]]-=lepes[1];
 	return t;
 }
 
 // csak a tesztelés miatt ilyen
-function jatek(t){
+function ujjatek(t){
 	let nim;
 	let lepes=new Array();
-
+	let gepjon=false; // ez majd attól függ, mit választ a játékos
 	do {
-		document.write(t+"<br><br>");
+		// ellenőrzés végett
+		
+		document.write("<br>"+lepesek+". lépés: "+t+"<br><br>");
 		document.write(osszelem(t)+"<br><br>");
-
 		nim=nimszamol(t);
 		document.write("nim szám: "+nim+"<br>");
-		lepes=geplep(t);
-		document.write("gép lépése: "+lepes+"<br><hr>");
-		kupacok=tmod(t,lepes);
-
+		//--
+		if (gepjon){
+			lepes=geplep(t);
+			document.write("gép lépése: "+lepes+"<br><hr>");
+			gepjon=false;
+			t=tmod(t,lepes);
+		}
+		else {
+			for (let i=0; i<=lepesek; i++) document.write("-"+lepestomb[i]+"<br>");
+			//jatekoslep(t);
+			lepes=geplep(t);
+			document.write("játékos lépése: "+lepes+"<br><hr>");
+			t=tmod(t,lepes);
+			lepesek++;
+			lepestomb[lepesek]=t.map((value)=> value);
+			gepjon=true;
+		}
+		
 	} while (osszelem(t)>0);
+	if (gepjon) document.write("játékos nyert");
+	else document.write("gép nyert");
 }
