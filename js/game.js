@@ -12,7 +12,8 @@ function geplep(t) {
 }
 
 function jatekoslep(t) {
-
+	lepes=geplep(t); // ez csak a teszt miatt
+	document.write("játékos lépése: "+lepes+"<br><hr>");
 }
 
 function tmod(t,lepes) {
@@ -36,14 +37,12 @@ function ujjatek(t){
 		if (gepjon){
 			lepes=geplep(t);
 			document.write("gép lépése: "+lepes+"<br><hr>");
-			gepjon=false;
 			t=tmod(t,lepes);
+			gepjon=false;
 		}
 		else {
 			for (let i=0; i<=lepesek; i++) document.write("-"+lepestomb[i]+"<br>");
-			//jatekoslep(t);
-			lepes=geplep(t);
-			document.write("játékos lépése: "+lepes+"<br><hr>");
+			jatekoslep(t);
 			t=tmod(t,lepes);
 			lepesek++;
 			lepestomb[lepesek]=t.map((value)=> value);

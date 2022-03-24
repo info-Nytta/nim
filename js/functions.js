@@ -21,3 +21,7 @@ function osszelem(t) {
 	for (let x of t) ossz+=x;
 	return ossz;
 }
+
+function rand(tol,ig) {
+	return Math.floor(Math.random()*(1+ig-tol)+tol);
+}

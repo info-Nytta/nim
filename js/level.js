@@ -17,12 +17,65 @@ function szint_megad(szint){
 	document.write(level);
 }
 
+function elemek()
+{
+	// itt majd ki kellene dolgozni egy jó kis általános algoritmust arra vonatkozóan, ha kell ismétlődés, nem, kell, hányszor kell, minden elem küülönböző legyen, stb.
+}
+
 function szint_general(szint) {
-	// kidolgozásra várnak a szintek
-	
-	let  kdb=Math.floor( Math.random()*3+3);
+	// a haladó szintet ketté kellene még osztani
+
 	let kupacok=new Array();
-	for (let i=0; i<kdb; i++) { kupacok[i]=Math.floor(Math.random()*10+1);}
-	
+	let kdb=0;
+	let k=0;
+
+	switch (szint) {
+		case 11: // kezdő
+			kdb=rand(3,4);
+			for (let i=0; i<kdb; i++)
+				if (i==2)  { 
+					do
+						k=rand(1,7);	
+					while (!(kupacok.includes(k)));
+					kupacok[i]=k;
+				}
+				else
+				kupacok[i]=rand(1,7);
+			break;
+		case 12: // haladó
+			kdb=3;
+			for (let i=0; i<kdb; i++) { 
+				do
+					k=rand(1,10);
+				while (kupacok.includes(k));
+				kupacok[i]=k;
+			}
+			break;
+		case 13: // profi
+			kdb=rand(4,5);
+			for (let i=0; i<kdb; i++) { 
+				do
+					k=rand(4,10);
+				while (kupacok.includes(k));
+				kupacok[i]=k;
+			}
+			break;
+		default: // egyelőre teszteléshez
+			kdb=2;
+			for (let i=0; i<kdb; i++)
+				kupacok[i]=rand(1,10);
+			break;
+	}
 	return kupacok;
+}
+
+
+function szintszoveg(sz) {
+	let szint="";
+	if (sz<=10) szint="Tanuló"
+	else if (sz==11) szint="Kezdő";
+	else if (sz==12) szint="Haladó";
+	else if (sz==13) szint="Profi";
+	else szint=sz;
+	return szint;
 }

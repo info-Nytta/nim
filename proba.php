@@ -1,3 +1,11 @@
+<!doctype html>
+<html lang='hu'>
+<head>
+    <meta charset='utf-8'>
+    <title>NIM JÁTÉK</title>
+</head>
+
+<body>
 <script src='js/functions.js'></script>
 <script src='js/move.js'></script>
 <script src='js/game.js'></script>
@@ -6,7 +14,9 @@
 
 var lepesek=0;
 var lepestomb=new Array();
-lepestomb[0]=szint_general(0);
+let szint=rand(1,13);
+lepestomb[0]=szint_general(szint);
+document.write(szintszoveg(szint)+" szint / "+szint+"<br>");
 ujjatek(lepestomb[0]);
 
 
@@ -19,4 +29,5 @@ ujjatek(lepestomb[0]);
 //kupacok=tombmodosit(kupacok,geplep(kupacok));
 
 </script>
-valami
+</body>
+</html>
