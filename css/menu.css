@@ -1,0 +1,78 @@
+/*navigation bar*/
+#top {
+	overflow: auto;
+	margin: 5px;
+}
+
+nav {
+	color: #c3920c;
+	padding:5px 0;
+	position: sticky;
+	top: 0;
+	z-index:5;
+	background-color: black;
+	text-align: center;
+}
+#hamburger {
+	font-size: 1.8em;
+	font-weight: bold;
+	text-align: right;
+	line-height:1.8em;
+	margin-right:10px;
+}
+
+#hicon:hover {
+	cursor: pointer;
+}
+.overlay {
+  height: 0%;
+	width: 400px;
+  max-width: 100%;
+	margin:auto;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  background-color: rgb(0,0,0);
+  overflow-y: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 10%;
+  width: 100%;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.overlay a {
+  padding: 8px;
+	padding-left: 50px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #c3920c;
+  display: block;
+  transition: 0.3s;
+}
+.overlay a:hover {
+	background-color:#161616;
+}
+.overlay img {
+	width: 90px;
+}
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay {overflow-y: auto;}
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
