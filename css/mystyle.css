@@ -101,15 +101,16 @@ button#me {
 	border: none;
 	border-radius: 5px;
 	border-color: khaki;
-
 }
 #gep:hover, #jatekos:hover, #me:hover, #restart:hover, #back:hover, #hint:hover {
 	cursor: pointer !important;
 }
 
-#restart, #back, #hint {
+
+#restart, #back, #hint, #me, #lose, #win {
 	display: none;
 }
+
 
 div#stars {
 	margin: 5px auto;
@@ -138,10 +139,9 @@ img.gyufa:hover {
 	margin: 15px auto;
 	height: 400px;
 	background-size: 60% auto;
-	display: none;
 }
-#lose {background-image: url(../nim/lose.png);}
-#win {background-image: url(../nim/win.png);}
+#lose {background-image: url(../img/lose.png);}
+#win {background-image: url(../img/win.png);}
 
 .szintkep {
 	margin: 10px;

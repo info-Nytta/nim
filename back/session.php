@@ -1,7 +1,10 @@
 <?php
 session_start();
 $_SESSION['id']=session_id();
-if (!isset($_SESSION['szint_ok'])) $_SESSION['szint_ok']=$_SESSION['szint']=11;
+if (!isset($_SESSION['szint_ok'])) {
+	$_SESSION['szint_ok']=$_SESSION['szint']=1;
+	$_SESSION['nyert'][$_SESSION['szint']]=0;
+}
 
 if (isset($_GET["p"]) && $_GET["p"]=='reset') 
 { 
