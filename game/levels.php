@@ -78,23 +78,20 @@ function kupacok_rnd($szint) {
 	$kupac=array();
 	switch ($szint) {
 		case 11: {
-			$kupacdb=rand(3,4);
-			for ($i=0; $i<$kupacdb; $i++)
-				if ($i==2) {
-					do {
-						$k=rand(1,7);
-					} while (!in_array($k,$kupac));
-					$kupac[$i]=$k;
-				}
-				else
-					$kupac[$i]=rand(1,7);
-			break;
-		}
-		case 12: {
 			$kupacdb=3;
 			for ($i=0; $i<$kupacdb; $i++) {
 				do {
-					$k=rand(1,10);
+					$k=rand(3,10);
+				} while (in_array($k,$kupac));
+				$kupac[$i]=$k;
+			}
+			break;
+		}
+		case 12: {
+			$kupacdb=4;
+			for ($i=0; $i<$kupacdb; $i++) {
+				do {
+					$k=rand(3,7);
 				} while (in_array($k,$kupac));
 				$kupac[$i]=$k;
 			}
@@ -104,7 +101,7 @@ function kupacok_rnd($szint) {
 			$kupacdb=4;
 			for ($i=0; $i<$kupacdb; $i++) {
 				do {
-					$k=rand(3,8);
+					$k=rand(5,10);
 				} while (in_array($k,$kupac));
 				$kupac[$i]=$k;
 			}

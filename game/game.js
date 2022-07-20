@@ -48,20 +48,20 @@ function gyufaszam() {
 	hide_icons();
 	if (s==0) {
 		hide('pg'); 
+		show("ok");
         if (playing){
-			message.innerHTML="Gép nyert!";
+			end.innerHTML="Gép nyert!";
 			show("lose");
 		} 
         else {
 			hide('me');
-			message.innerHTML="Te nyertél!";
 			show("win");
-			pontok++;
-			pontszam.innerHTML=pontok;
+			document.getElementById("pp").value = 1;	
+			end.innerHTML="Te nyertél!";
 		} 
 	}
 	else {
-		playing=!playing;
+		if (playing != null) playing=!playing;
 		if (playing) geplep();
 		else jatekoslep();
 		uzenetSav();
@@ -74,11 +74,12 @@ function hint() {
 		message.innerHTML="Nincs jó lépés.";
 	}
 	else {
-		reset_imgMatrix(game[moves]);
+		/*reset_imgMatrix(game[moves]);
 		display();
 		jeloltKupac=lepes[0];
 		for (i=0; i<lepes[1]; i++) jelol(lepes[0],game[moves][jeloltKupac]-i-1);
-		message.innerHTML= (lepes[0]+1) + ". sor: " + lepes[1]+ " db gyufa"; 
+		*/
+		message.innerHTML= (lepes[0]+1) + ". sorból " + lepes[1]+ " db"; 
 	}
 }
 
@@ -93,8 +94,10 @@ function jatekoslep () {
 			}
 		}
 		if (db>0) {
-			newMove(kupac,db); 
-			gyufaszam();
+			//newMove(kupac,db); 
+			//gyufaszam();
+			let lepes=[kupac,db];
+			idozites(lepes);
 		}
 	}
 }
@@ -103,11 +106,14 @@ function geplep() {
 	let kupac;
 	let db;
 	let lepes=jolepes(t);
-	if (lepes[0]==0 && lepes[1]==0) { // ha 0 lépést kapott vissza, akkor random lépés.
-		do {
+	if (lepes[0]==0 && lepes[1]==0) { 
+		// ha 0 lépést kapott vissza, akkor random lépés.
+		/*do {
 			kupac=Math.floor( Math.random()*t.length );
-		} while (t[kupac]==0);
-		db=Math.floor( Math.random()*t[kupac]+1);
+		} while (t[kupac]==0);*/
+		kupac=maxi(t); 
+		if (t[kupac]>2) db=Math.floor( Math.random()*(t[kupac]-2)+2);
+		else db=1;
 		lepes=[kupac,db];
 	} 
 	hide('me');	 
@@ -115,22 +121,25 @@ function geplep() {
 	idozites(lepes);
 }
 
+function mutat(lepes,img) {
+	for (i=0; i<lepes[1]; i++) {
+		imgMatrix[lepes[0]][game[moves][lepes[0]]-i-1]=img;
+		gyufaKi(lepes[0],[game[moves][lepes[0]]-i-1],img);
+	}
+}
 async function idozites(lepes) {
-	for (i=0; i<lepes[1]; i++) {
-		imgMatrix[lepes[0]][game[moves][lepes[0]]-i-1]=2;
-		gyufaKi(lepes[0],[game[moves][lepes[0]]-i-1],2);
-	}
-	await sleep(500);	
-	for (i=0; i<lepes[1]; i++) {
-		imgMatrix[lepes[0]][game[moves][lepes[0]]-i-1]=1;
-		gyufaKi(lepes[0],[game[moves][lepes[0]]-i-1],1);
-	}
-	await sleep(500);	
-	for (i=0; i<lepes[1]; i++) {
-		imgMatrix[lepes[0]][game[moves][lepes[0]]-i-1]=2;
-		gyufaKi(lepes[0],[game[moves][lepes[0]]-i-1],2);
-	}
-	await sleep(1000);
+	await sleep(300);	
+	mutat(lepes,0);
+	await sleep(300);
+	if (playing) mutat(lepes,1);
+	else mutat(lepes,2);
+	await sleep(300);	
+	mutat(lepes,0);
+	await sleep(300);	
+	if (playing) mutat(lepes,1);
+	else mutat(lepes,2);
+	await sleep(300);
+	mutat(lepes,2);	
 	newMove(lepes[0],lepes[1]);
 	gyufaszam();
 }
