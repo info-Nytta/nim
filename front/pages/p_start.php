@@ -6,6 +6,8 @@
 	<div style='margin:150px auto;'>
 		<img src='img/movenim.gif'>
 	</div>
-	<p style='font-size:70%;font-style:italic;'>design & programming by Nytta
-	<br>2022</p>
+
+	<p style='font-size:70%;font-style:italic;'>design & programming by Nytta 2022
+
+	</p>
 </div>

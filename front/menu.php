@@ -20,6 +20,8 @@ if (isset($_GET['p']))
 		case "szintek": {$page="pages/p_szintek.php"; break;}
 		case "nim": {$page="pages/p_nim.php"; break;}
 		case "nevjegy": {$page="pages/p_start.php"; break;}
+		case "belepes": {$page="pages/p_login.php"; break;}
+		case "regisztracio": {$page="pages/p_reg.php"; break;}
 		//case "403": {$page="./403.html"; break;}
 		//case "404": {$page="./404.html"; break;}
 		default: {$page="pages/p_start.php"; break;}

@@ -13,27 +13,85 @@ $kupacok=kupac($szint);
 	<script src="./game/game.js"></script> 
 	<script src="./game/move.js"></script> 
 	<div class="content">
-	
+
+			<div class='w3-display-container' style='float:right;margin:10px 20px auto auto'>
+				<img class='star' src='img/star0.png'>
+				<div class='w3-display-middle w3-large szintszoveg'>
+					<?php echo $nyert;?>
+				</div>			
+		
+			</div>
+
+
+	<div style='display: inline-block;'>
+
+		<?php	
+		//előző szint
+			if ($szint>1){
+		?>
 		<div class='w3-display-container' style='display: inline-block;'>
+			<a href='./?szint=<?php echo ($szint-1);?>'>
+				<img class='szintkep-mini' src='img/szintff.png' style='height:30px;'>
+				<div class='w3-display-middle w3-small szintszoveg'>
+					<?php  echo $szint-1;?>
+				</div>
+			</a>   
+		</div>
+		<?php 
+			}
+			else {
+				?>
+			<div class='w3-display-container' style='display: inline-block;'>
+				<img class='szintkep-mini' src='img/szintff.png' style='height:30px;'>
+			</div>
+				<?php
+			}
+		?>
+
+
+			
 			<?php
+			/*
 			if ($szint<SZINTEK['halado']) $kep="kezdo";
 			else if ($szint<SZINTEK['profi']) $kep="halado";
 			else $kep="p".($szint-(SZINTEK['profi']-1));
 			echo "<img style='width:50px;' src='img/$kep.png'>";
 			if ($szint<SZINTEK['profi'])echo "<div class='w3-display-middle w3-large szintszoveg'>$szint</div>";
-			?>	
-		</div>
-		
-		<div class='w3-display-container' style='display: inline-block;'>
-			<img class='star' src='img/star0.png'>
-			<div id='pontszam' class='w3-display-middle w3-large <?php if ($nyert>=SZINTEK['ugras']) echo "szintszoveg"; ?>'>
-				<?php if ($nyert>=SZINTEK['ugras']) echo "&#9967;"; else echo $nyert;?>
-			</div>			
-		</div>
+			*/
+			
+			// aktuális szint
+			echo szint_icon($szint);
 
-		<p id='szintnyert' style='display: inline-block;'>
-			<?php if ($nyert>=SZINTEK['ugras']) echo $nyert; ?> 
-		</p>
+			?>
+
+
+
+			
+		<?php	
+		// következő szint
+			if ($szint<SZINTEK['utolso']) {		
+				if ($nyert>=SZINTEK['ugras']){
+
+		?>
+		<div class='w3-display-container' style='display: inline-block;'>
+			<a href='./?szint=<?php echo ($szint+1);?>'>
+				<img class='szintkep-mini' src='img/szintff.png' style='height:30px;'>
+				<div class='w3-display-middle w3-small szintszoveg'>
+					<?php  echo $szint+1;?>
+				</div>
+			</a>
+		</div>
+		<?php 
+				}
+			}
+		?>
+
+
+	</div>
+
+
+
+
 
 		<div class="buttons">
 			<div id="message" style='float:left'></div>
@@ -76,7 +134,7 @@ $kupacok=kupac($szint);
 		<div class='lepes' >
 			<button id='me' onClick="javascript:jatekoslep()">Lépek</button>
 		</div>
-		<form id='ok' method='POST'>
+		<form id='ok' method='POST' >
 			<div id='lose'></div>
 			<div id='win'></div>
 			<input type='hidden' name='pp' id='pp' value='0'>

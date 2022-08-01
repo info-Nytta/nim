@@ -19,16 +19,21 @@ function restart() {
 }
 
 function back() {
-	if (moves>1) {
+	if (moves>0) {
 		game[moves]=null;
 		moves--;
-		moves--;
+		if (moves>0) {
+			game[moves]=null;
+			moves--;
+		}
 		if (moves==0) restart();
 		else {
 			reset_imgMatrix(game[moves]);
 			display();
+			s=osszelem(game[moves]);
 		}
-	} else restart();
+	} 
+	else restart();
 }
 
 function newMove(kupac,db) {
