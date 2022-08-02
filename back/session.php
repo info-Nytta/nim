@@ -7,8 +7,8 @@ if (!isset($_SESSION['id'])) {
 	$_SESSION['nyert'][$_SESSION['szint']]=0;
 }
 else {
-	// itt igazából csak az adatbázisból kellene kiolvasni a szinteket és pontokat,
-	// és nem itt kell számoltatni, meg hozzáadni
+	// itt igazából csak az adatbázisból kellne kiolvasni a szinteket és pontokat,
+	// és nem itt kéne számoltatni, meg hozzáadni
 	// csak előbb meg kell vizsgálni, hogy az illető be van-e lépve.
 	if ($_SESSION['login']) 
 		$_SESSION['nyert'][$_SESSION['szint']]=pontszam(user_id($_SESSION['uid']),$_SESSION['szint']);

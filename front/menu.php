@@ -8,10 +8,10 @@ $page="pages/p_start.php";
 if (isset($_GET['szint']))
 {
 	if ($_GET['szint']<=$_SESSION['szint_ok']) $_SESSION['szint']=$_GET['szint'];
+	aktszint(user_id($_SESSION['uid']),$_SESSION['szint']);
 	$page="pages/p_game.php";
 }
-
-if (isset($_GET['p']))
+else if (isset($_GET['p']))
 {
 	
 	switch ($_GET['p'])
