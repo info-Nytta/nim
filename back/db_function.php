@@ -1,1 +1,1 @@
-// functions
+// adatbázis adatok

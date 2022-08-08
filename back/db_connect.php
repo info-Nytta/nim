@@ -1,0 +1,1 @@
+// kapcsolati adatok
