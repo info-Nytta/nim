@@ -20,6 +20,8 @@
 	}
 ?>
 	<script>
+	$fnev=user.fnev.value;
+	$email=user.email.value;
 	function ellenorzes() {
 		ok=true;
 		if(user.pw.value.length <  8) { 
@@ -27,24 +29,28 @@
 		}  
 		else if(user.pw.value!=user.pw2.value)  { 
 			alert('Nem egyeznek a jelszavaid!');  ok = false;
-		} 
+		}
+		user.fnev.value=$fnev;
+		user.email.value=$email;
 		return ok;
+	}
+	function ujra() {
 	}		
 	</script>
 
 	<div class='content center'>
 		<p><?php echo $hiba; ?></p>
 		<h1><img src='./img/reg.png' style='height:75px;'></h1>
-		<form id="login" name='user' method="POST" class='center gold'>
+		<form id="login" name='user' method="POST" class='center gold' onSubmit='return ellenorzes()'>
 			<p>Felhasználónév:</p>
-			<input type='text' name='fnev' required>
+			<input type='text' id='fnev' name='fnev' required>
 			<p>Email:</p>
-			<input type='email' name='email' required>
+			<input type='email' id='email' name='email' required>
 			<p>Jelszó:</p>
 			<input type='password' name='pw' maxlength='15' required>
 			<p>Jelszó mégegyszer:</p>
 			<input type='password' name='pw2' maxlength='15' required>
-			<input type='submit' name='reg' value='Regisztrálok' onClick='ok=ellenorzes(); if(ok) this.value="ok";'>
+			<input type='submit' name='reg' value='Regisztrálok'>
 		</form>
 		<p class='center gold kisbetu'>Már regisztráltál?</p>
 		<p class='valt kisbetu'><a href='./?p=belepes' >Belépés</a></p>
