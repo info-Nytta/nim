@@ -76,6 +76,29 @@ function kupacok_tomb($szint) {
 
 function kupacok_rnd($szint) {
 	$kupac=array();
+	$sz=array(
+		11 => array(
+			'kupacdb' => 3,
+			'minelem' => 3,
+			'maxelem' => 10
+		),
+		12 => array(
+			'kupacdb' => 4,
+			'minelem' => 3,
+			'maxelem' => 7
+		),
+		13 => array(
+			'kupacdb' => 4,
+			'minelem' => 5,
+			'maxelem' => 10
+		),
+		14 => array(
+			'kupacdb' => 5,
+			'minelem' => 5,
+			'maxelem' => 10
+		)
+	);
+	/*
 	switch ($szint) {
 		case 11: {
 			$kupacdb=3;
@@ -117,6 +140,13 @@ function kupacok_rnd($szint) {
 			}
 			break;
 		}
+	}
+	*/
+	for ($i=0; $i<$sz[$szint]['kupacdb']; $i++) {
+		do {
+			$k=rand($sz[$szint]['minelem'],$sz[$szint]['maxelem']);
+		} while (in_array($k,$kupac));
+		$kupac[$i]=$k;
 	}
 	return $kupac;
 }	
