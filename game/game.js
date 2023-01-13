@@ -55,14 +55,14 @@ function gyufaszam() {
 		hide('pg'); 
 		show("ok");
         if (playing){
-			end.innerHTML="Gép nyert!";
+			end.innerHTML="You lose!";
 			show("lose");
 		} 
         else {
 			hide('me');
 			show("win");
 			document.getElementById("pp").value = 1;	
-			end.innerHTML="Te nyertél!";
+			end.innerHTML="You win!";
 		} 
 	}
 	else {
@@ -76,7 +76,7 @@ function gyufaszam() {
 function hint() {
 	let lepes=jolepes(game[moves]);	
 	if (lepes[0]==0 && lepes[1]==0) {
-		message.innerHTML="Nincs jó lépés.";
+		message.innerHTML="No good move.";
 	}
 	else {
 		/*reset_imgMatrix(game[moves]);
@@ -84,7 +84,7 @@ function hint() {
 		jeloltKupac=lepes[0];
 		for (i=0; i<lepes[1]; i++) jelol(lepes[0],game[moves][jeloltKupac]-i-1);
 		*/
-		message.innerHTML= (lepes[0]+1) + ". sorból " + lepes[1]+ " db"; 
+		message.innerHTML= (lepes[0]+1) + ". row " + lepes[1]+ " stick(es)"; 
 	}
 }
 
@@ -184,14 +184,14 @@ function start (p) {
 
 function uzenetSav () {
 	if (playing==null) {
-		message.innerHTML="Ki kezdjen?";
+		message.innerHTML="Do you want to start?";
 		show('gep'); show('jatekos');
 	}
 	else if (playing) {
-		message.innerHTML="Gép lép ...";
+		message.innerHTML="Computer ...";
 	}
 	else {
-		message.innerHTML="Válassz gyufá(ka)t!";
+		message.innerHTML="Select stick(es)!";
 		show('me'); show_icons();
 	}
 }

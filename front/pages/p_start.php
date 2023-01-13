@@ -2,12 +2,14 @@
 
 <div class="content" style='text-align:center;color: #c3920c;'>
 	<h1>NIM
-	<br>LOGIKAI JÁTÉK</h1>
+	<br>LOGICAL GAME</h1>
 	<div style='margin:150px auto;'>
 		<img src='img/movenim.gif'>
 	</div>
 
-	<p style='font-size:70%;font-style:italic;'>design & programming by Nytta 2022
+	<p style='font-size:70%;font-style:italic;'>design & programming by 
+	<a href='https://nytta.hu' target='_blank' style='color:khaki;'>Nytta</a>
+	2022
 
 	</p>
 </div>

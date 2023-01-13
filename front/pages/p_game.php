@@ -30,7 +30,7 @@ $kupacok=kupac($szint);
 			if ($szint>1){
 		?>
 		<div class='w3-display-container' style='display: inline-block;'>
-			<a href='./?szint=<?php echo ($szint-1);?>'>
+			<a href='./level-<?php echo ($szint-1);?>'>
 				<img class='szintkep-mini' src='img/szintff.png' style='height:30px;'>
 				<div class='w3-display-middle w3-small szintszoveg'>
 					<?php  echo $szint-1;?>
@@ -74,7 +74,7 @@ $kupacok=kupac($szint);
 
 		?>
 		<div class='w3-display-container' style='display: inline-block;'>
-			<a href='./?szint=<?php echo ($szint+1);?>'>
+			<a href='./level-<?php echo ($szint+1);?>'>
 				<img class='szintkep-mini' src='img/szintff.png' style='height:30px;'>
 				<div class='w3-display-middle w3-small szintszoveg'>
 					<?php  echo $szint+1;?>
@@ -100,8 +100,8 @@ $kupacok=kupac($szint);
 			</button>
 			<button id="restart" onClick="javascript:restart()"><img class='icon' src='./img/restart.png'></button>
 			<button id="back" onClick="javascript:back()"><img class='icon' src='./img/back.png'></button>
-			<button class='btn' id="gep" onClick="javascript:start(true)">Gép</button>
-			<button class='btn' id="jatekos" onClick="javascript:start(false)">Játékos</button>
+			<button class='btn' id="gep" onClick="javascript:start(true)"> No </button>
+			<button class='btn' id="jatekos" onClick="javascript:start(false)"> Yes </button>
 		</div>
 		<div id="uzenet"></div>
 	
@@ -132,7 +132,7 @@ $kupacok=kupac($szint);
 	</script>
 		
 		<div class='lepes' >
-			<button id='me' onClick="javascript:jatekoslep()">Lépek</button>
+			<button id='me' onClick="javascript:jatekoslep()">GO</button>
 		</div>
 		<form id='ok' method='POST' >
 			<div id='lose'></div>

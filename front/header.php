@@ -1,4 +1,6 @@
-<?php 	if(!defined('NIMJATEK')) die(header('Location: ../?p=403')); ?>
+<?php 	if(!defined('NIMJATEK')) die(header('Location: ../?p=403')); 
+
+?>
 
 <!doctype html>
 <html lang='hu'>
@@ -6,12 +8,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="./css/w3.css">
+	 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> 
 	<link rel="stylesheet" href="./css/mystyle.css">
 	<link rel="stylesheet" href="./css/menu.css">
 	<link rel='icon' type="image/png" href='./icon.png' />
 	<script type="text/javascript" src="./js/scripts.js"></script>
-	<title>Nim játék</title>
+	<title>Nim game</title>
 </head>
 <body>
 <nav>
@@ -22,8 +24,8 @@
 			</div>
 			<div id='udv' style="height:50px;float:left;margin:auto;text-align:center;padding-top:15px;">
 				<?php
-				if($_SESSION['login']) echo "
-				Üdv <span style='text-transform: capitalize;'>".$_SESSION['user']."</span>!";
+				if(isset($_SESSION['login']) && $_SESSION['login']) echo "
+				Hi ".$_SESSION['user']."!";
 				?>
 			</div>
 			<div id="hamburger" onclick="myMobilMenu()">
@@ -36,17 +38,17 @@
 <div class='content'>		
 	<div id="myNav" class="overlay">
 		<div class="overlay-content" style='font-size:50%'>
-			<a href='./?p=uj'>
-				<img src="./img/new.png" alt='' title='Új játék'>
-				Új játék
+			<a href='./new'>
+				<img src="./img/new.png" alt='' title='New game'>
+				New game
 			</a>
-			<a href='./?p=szintek'>
-				<img src="./img/szintek.png" alt='' title='Szintek'>
-				Szintek
+			<a href='./levels'>
+				<img src="./img/szintek.png" alt='' title='Levels'>
+				Levels
 			</a>
-			<a href="./?p=nim">
-				<img src="./img/szabaly.png" alt='' title='Játékszabály'>
-				Játékszabály
+			<a href="./nim">
+				<img src="./img/szabaly.png" alt='' title='Rule'>
+				Rule
 			</a>
 			<!--
 			<a href='./?p=nevjegy'>
@@ -56,14 +58,14 @@
 			-->
 			<?php
 			if (!$_SESSION['login']) echo "
-			<a href='./?p=belepes'>
-				<img src='./img/login.png' alt='' title='Belépés'>
-				Belépés
+			<a href='./login'>
+				<img src='./img/login.png' alt='' title='Log In'>
+				Log In
 			</a>";
 			else echo "
 			<a href='./?logout=".$_SESSION['id']."'>
-				<img src='./img/logout.png' alt='' title='Kilépés'>
-				Kilépés
+				<img src='./img/logout.png' alt='' title='Log Out'>
+				Log Out
 			</a>";
 			?>
 		</div>

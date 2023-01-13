@@ -1,9 +1,21 @@
 <?php 	if(!defined('NIMJATEK')) die(header('Location: ../?403')); ?>
 
 <div class="content">
-	<h2>Nim játék</h2>
+	<h2>Nim game</h2>
 	<div>
-		A játék kezdetén van valamennyi darab gyufaszálunk, amelyek sorokba vannak rendezve. Egy-egy sorban  1-10 db gyufaszálat találunk. Játékos és gép játszik egymás ellen, és felváltva lépnek. A lépés abból áll, hogy a soron következő játékosnak el kell vennie valamelyik sorból (csak az egyikből!) tetszőleges számú gyufaszálat (legalább 1-et, legfeljebb az összeset). A játéknak akkor van vége, ha elfogyott minden gyufaszál. Az nyeri meg a játékot, aki utoljára tud lépni.
+		<span class="gold">Start:</span> all matchsticks arranged in rows. Player and computer take turns. 
+	</div>
+	<div style="padding:10px 0">	
+		<span class="gold">Move:</span> take some apples (minimum 1, maximum all) from a row (only one!). 
+	</div>
+	<div style="padding:10px 0">	
+		<span class="gold">End:</span> all matchsticks lost.
+	</div>
+	<div style="padding:10px 0">
+		<span class="gold">Winner:</span> last person to make a move.
+	</div>
+	<div style="padding:10px 0">
+		<span class="gold">New level:</span> after 5 winning games.
 	</div>
 
 </div>

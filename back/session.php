@@ -31,7 +31,7 @@ else {
 		}
 		
 		
-		header('Location: ./?p=uj');
+		header('Location: ./new');
 	}
 }
 

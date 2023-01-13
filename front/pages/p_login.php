@@ -11,11 +11,11 @@ if (isset($_POST['login']))
 			$_SESSION['szint_ok']=$login['szint_ok'];
 			$_SESSION['uid']=$login['uid'];
 			$_SESSION['login']=true;
-			header('Location: ./?p=uj');
+			header('Location: ./new');
 		}
 		else
 		{
-			$hiba="Nem megfelelő név vagy jelszó.<br>Próbáld újra!";
+			$hiba="Incorrect name or password.<br>Try again!";
 		}
 	}
 ?>
@@ -24,13 +24,13 @@ if (isset($_POST['login']))
 		<p><?php echo $hiba; ?></p>
 		<h1><img src='./img/profil.png' style='height:100px;'></h1>
 		<form id="login" method="POST" class='center gold'>
-			<p>Felhasználónév:</p>
+			<p>Player name:</p>
 			<input type='text' name='fnev' maxlength='15' required>
-			<p>Jelszó:</p>
+			<p>Password:</p>
 			<input type='password' name='pw' maxlength='15' required>
-			<input type='submit' name='login' value='Belépek'>
+			<input type='submit' name='login' value='Log In'>
 
 		</form>
-		<p class='center gold kisbetu'>Még nem regisztráltál?</p>
-		<p class='valt kisbetu'><a href='./?p=regisztracio' >Regisztráció</a></p>
+		<p class='center gold kisbetu'>Not registered?</p>
+		<p class='valt kisbetu'><a href='./registration' >Registration</a></p>
 	</div>

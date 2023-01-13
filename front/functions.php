@@ -25,7 +25,7 @@
 					$kepszoveg="";
 			}
 			$icon="<div class='w3-display-container' style='display: inline-block;'>
-			<a href='./?szint=$szint'>
+			<a href='./level-$szint'>
 				<img class='szintkep' src='img/$kep.png'>
 				<div class='w3-display-middle w3-large szintszoveg'>$kepszoveg</div>
 			</a>
